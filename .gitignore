@@ -1,0 +1,40 @@
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+obj/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Eclipse project files
+.classpath
+.project
+libs/armeabi*
+
+# Intellij project files
+out/
+build/
+*/src/main/libs/armeabi*
+.idea/
+.gradle/
+*.iml
+*.ipr
+*.iws
+
+# C/C++
+*.o
+*.lo
+*.la
+*.pc
+.deps
+.libs

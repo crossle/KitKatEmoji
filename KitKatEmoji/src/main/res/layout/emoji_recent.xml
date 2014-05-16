@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/no_recent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawablePadding="12dp"
+        android:drawableTop="@drawable/ic_no_emoji_history_light"
+        android:gravity="center_vertical|center"
+        android:text="@string/emoji_no_recent"
+        android:textSize="18sp" />
+
+</FrameLayout>
