@@ -1,4 +1,4 @@
-KiKatEmoji
+KitKatEmoji
 =========
 
 Android KitKat emoji looking better than iOS, we used in [Shou](https://shou.tv)
