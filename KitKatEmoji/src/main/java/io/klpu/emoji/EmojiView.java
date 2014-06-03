@@ -27,7 +27,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class EmojiView extends LinearLayout {
-    private final static String EMOJI_PREFERENCE = "emoji_preferencee";
+    private final static String EMOJI_PREFERENCE = "emoji_preferences";
     private final static String PREF_KEY_LAST_TAB = "last_tab";
     private final static String PREF_KEY_RECENT_EMOJI = "recent_remoji";
 
