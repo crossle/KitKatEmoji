@@ -62,12 +62,12 @@ public class MainActivity extends Activity {
 
         @Override
         public void onBackspace() {
-
+            // mSendText.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL));
         }
 
         @Override
-        public void onEmojiSelected(String paramString) {
-
+        public void onEmojiSelected(String res) {
+            // String result = String.valueOf(Character.toChars(Integer.decode("0x" + res)));
         }
     }
 }
