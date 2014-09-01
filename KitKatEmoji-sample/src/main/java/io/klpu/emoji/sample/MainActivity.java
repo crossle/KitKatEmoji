@@ -3,11 +3,13 @@ package io.klpu.emoji.sample;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import io.klpu.emoji.EmojiView;
 
@@ -50,6 +52,8 @@ public class MainActivity extends Activity {
      */
     public static class PlaceholderFragment extends Fragment implements EmojiView.EventListener {
 
+        private EditText mInputText;
+        private EmojiView mEmojiView;
         public PlaceholderFragment() {
         }
 
@@ -57,17 +61,22 @@ public class MainActivity extends Activity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            mInputText = (EditText) rootView.findViewById(R.id.editText);
+            mEmojiView = (EmojiView) rootView.findViewById(R.id.emoji_view);
+            mEmojiView.setEventListener(this);
             return rootView;
         }
 
         @Override
         public void onBackspace() {
-            // mSendText.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL));
+            mInputText.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL));
         }
 
         @Override
         public void onEmojiSelected(String res) {
-            // String result = String.valueOf(Character.toChars(Integer.decode("0x" + res)));
+            String result = String.valueOf(Character.toChars(Integer.decode("0x" + res)));
+            mInputText.setText(mInputText.getText().append(result).toString());
+            mInputText.setSelection(mInputText.getText().length());
         }
     }
 }

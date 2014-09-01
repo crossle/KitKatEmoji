@@ -5,10 +5,19 @@
     tools:context="io.klpu.emoji.sample.MainActivity$PlaceholderFragment">
 
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="45dp"/>
+
     <io.klpu.emoji.EmojiView
+        android:id="@+id/emoji_view"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_alignParentBottom="true" />
-
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
