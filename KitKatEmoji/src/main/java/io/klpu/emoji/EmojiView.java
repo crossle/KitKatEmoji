@@ -85,7 +85,7 @@ public class EmojiView extends LinearLayout {
         mBackSpace = (ImageButton) root.findViewById(R.id.back_space);
         mGridViews = new ArrayList<GridView>();
 
-        for (int i = 0; i < mIcons.length; i++) {
+        for (int i = 0, count = mIcons.length; i < count; i++) {
             String[] emoji = getResources().getStringArray(mEmojis[i]);
             EmojiGridAdapter emojiGridAdapter = new EmojiGridAdapter(getContext(), emoji);
             GridView gridView = (GridView) inflater.inflate(R.layout.emoji_gridview, null);
