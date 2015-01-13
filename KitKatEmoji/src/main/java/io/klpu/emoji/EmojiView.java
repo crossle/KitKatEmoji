@@ -27,26 +27,27 @@ import java.util.Collections;
 import java.util.List;
 
 public class EmojiView extends LinearLayout {
+
     private final static String EMOJI_PREFERENCE = "emoji_preferences";
     private final static String PREF_KEY_LAST_TAB = "last_tab";
     private final static String PREF_KEY_RECENT_EMOJI = "recent_remoji";
 
     private final static int[] mIcons = {
-            R.drawable.ic_emoji_recent_light,
-            R.drawable.ic_emoji_people_light,
-            R.drawable.ic_emoji_objects_light,
-            R.drawable.ic_emoji_nature_light,
-            R.drawable.ic_emoji_places_light,
-            R.drawable.ic_emoji_symbols_light
+        R.drawable.ic_emoji_recent_light,
+        R.drawable.ic_emoji_people_light,
+        R.drawable.ic_emoji_objects_light,
+        R.drawable.ic_emoji_nature_light,
+        R.drawable.ic_emoji_places_light,
+        R.drawable.ic_emoji_symbols_light
     };
 
     private final static int[] mEmojis = {
-            R.array.emoji_recent,
-            R.array.emoji_faces,
-            R.array.emoji_objects,
-            R.array.emoji_nature,
-            R.array.emoji_places,
-            R.array.emoji_symbols,
+        R.array.emoji_recent,
+        R.array.emoji_faces,
+        R.array.emoji_objects,
+        R.array.emoji_nature,
+        R.array.emoji_places,
+        R.array.emoji_symbols,
     };
 
     private EventListener mListener;
@@ -116,8 +117,9 @@ public class EmojiView extends LinearLayout {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             String selected = (String) view.getTag(view.getId());
-            if (mListener != null)
+            if (mListener != null) {
                 mListener.onEmojiSelected(selected);
+            }
             addToRecent(selected);
         }
     };
@@ -127,8 +129,9 @@ public class EmojiView extends LinearLayout {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             String selected = (String) view.getTag(view.getId());
-            if (mListener != null)
+            if (mListener != null) {
                 mListener.onEmojiSelected(selected);
+            }
         }
     };
 
@@ -224,6 +227,7 @@ public class EmojiView extends LinearLayout {
     };
 
     class EmojiGridAdapter extends BaseAdapter {
+
         private String[] mEmojis;
         private LayoutInflater mInflater;
 
@@ -258,7 +262,7 @@ public class EmojiView extends LinearLayout {
 
             ViewHolder viewHolder = (ViewHolder) rowView.getTag();
             int resId = getResources().getIdentifier("emoji_u" + mEmojis[position], "drawable",
-                    getContext().getPackageName());
+                getContext().getPackageName());
             viewHolder.imageView.setImageResource(resId);
             viewHolder.imageView.setTag(viewHolder.imageView.getId(), mEmojis[position]);
             return rowView;
@@ -266,6 +270,7 @@ public class EmojiView extends LinearLayout {
     }
 
     static class ViewHolder {
+
         public ImageView imageView;
 
         public ViewHolder(ImageView imageView) {
@@ -274,7 +279,7 @@ public class EmojiView extends LinearLayout {
     }
 
     private class EmojiPagerAdapter extends PagerAdapter implements
-            PagerSlidingTabStrip.IconTabProvider {
+        PagerSlidingTabStrip.IconTabProvider {
 
         private EmojiPagerAdapter() {
         }
@@ -323,6 +328,7 @@ public class EmojiView extends LinearLayout {
     }
 
     public static interface EventListener {
+
         public void onBackspace();
 
         public void onEmojiSelected(String res);
